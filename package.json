@@ -1,0 +1,44 @@
+{
+  "name": "@caviar/test",
+  "version": "1.0.0",
+  "description": "Testing utility for caviar",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "NODE_DEBUG=@caviar/test nyc ava --timeout=10s --verbose",
+    "test:only": " nyc ava --timeout=10s --verbose",
+    "lint": "eslint .",
+    "posttest": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
+  },
+  "files": [
+    "src/"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kaelzhang/caviar-test.git"
+  },
+  "keywords": [
+    "@caviar/test"
+  ],
+  "engines": {
+    "node": ">= 6"
+  },
+  "ava": {
+    "babel": false,
+    "files": [
+      "test/*.test.js"
+    ]
+  },
+  "author": "kaelzhang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kaelzhang/caviar-test/issues"
+  },
+  "devDependencies": {
+    "ava": "^1.4.1",
+    "codecov": "^3.3.0",
+    "nyc": "^13.3.0",
+    "eslint-config-ostai": "^3.0.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint": "^5.16.0"
+  }
+}
