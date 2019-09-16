@@ -15,18 +15,35 @@
 
 # @caviar/test
 
-Testing utility for caviar
+Testing utility for caviar, caviar blocks, and caviar plugins
 
 ## Install
 
 ```sh
-$ npm i @caviar/test
+$ npm i @caviar/test -D
 ```
 
 ## Usage
 
 ```js
-import @caviar/test from '@caviar/test'
+const {
+  runBlock
+} = require('@caviar/test')
+
+const block = await runBlock(NextBlock, options)
+```
+
+### await runBlock(block: Class, options: RunBlockOptions): Block
+
+- **block** `Class` the subclass of `caviar.Block`
+- **options** `RunBlockOptions`
+
+```ts
+interface RunBlockOptions {
+  apply?: Function(getHooks: Function)
+  configChain: Array<Object>
+  caviarOptions: Object
+}
 ```
 
 ## License
