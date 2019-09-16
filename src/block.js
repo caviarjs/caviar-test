@@ -1,5 +1,7 @@
 const assert = require('assert')
+const {resolve} = require('path')
 const {
+  isString,
   isObject,
   isArray,
   isFunction
@@ -14,11 +16,13 @@ module.exports = async (BlockClass, options) => {
   const {
     apply,
     configChain,
-    caviarOptions
+    cwd,
+    dev,
+    phase = 'default'
   } = options
 
-  assert(isObject(caviarOptions),
-    'options.caviarOptions must be an object')
+  assert(isString(cwd), 'options.cwd must be a string')
+  assert(isString(phase), 'options.phase must be a string')
 
   assert(isArray(configChain) && configChain.every(isObject),
     'options.configChain must be an array of objects')
@@ -37,7 +41,11 @@ module.exports = async (BlockClass, options) => {
 
   const block = init(
     BlockClass,
-    caviarOptions,
+    {
+      cwd: resolve(cwd),
+      dev: !!dev,
+      phase
+    },
     hooksManager,
     configLoader
   )

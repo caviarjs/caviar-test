@@ -40,9 +40,14 @@ const block = await runBlock(NextBlock, options)
 
 ```ts
 interface RunBlockOptions {
+  // Which is the same as the apply function of caviar.Plugin
   apply?: Function(getHooks: Function)
+  // Array of config layers
   configChain: Array<Object>
-  caviarOptions: Object
+  // The current working directory
+  cwd: string
+  dev?: boolean = false
+  phase?: string = 'default'
 }
 ```
 

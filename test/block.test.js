@@ -8,10 +8,7 @@ const B = require('./block')
 test('runBlock', async t => {
   const block = await runBlock(B, {
     apply () {},
-    caviarOptions: {
-      cwd: __dirname,
-      phase: 'default'
-    },
+    cwd: __dirname,
     configChain: [{}]
   })
 
