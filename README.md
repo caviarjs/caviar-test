@@ -43,6 +43,7 @@ interface RunBlockOptions {
   // Which is the same as the apply function of caviar.Plugin
   apply?: Function(getHooks: Function)
   // Array of config layers
+  // [app layer, lower layer, ..., the lowest layer]
   configChain: Array<Object>
   // The current working directory
   cwd: string
@@ -50,6 +51,8 @@ interface RunBlockOptions {
   phase?: string = 'default'
 }
 ```
+
+Returns `Block` the block which has already run.
 
 ## License
 
