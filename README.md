@@ -44,7 +44,7 @@ interface RunBlockOptions {
   apply?: Function(getHooks: Function)
   // Array of config layers
   // [app layer, lower layer, ..., the lowest layer]
-  configChain: Array<Object>
+  configChain: Array<object>
   // The current working directory
   cwd: string
   dev?: boolean = false
