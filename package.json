@@ -1,6 +1,6 @@
 {
   "name": "@caviar/test",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Testing utility for caviar",
   "main": "src/index.js",
   "scripts": {
@@ -43,7 +43,7 @@
     "eslint-config-ostai": "^3.0.0",
     "eslint-plugin-import": "^2.16.0",
     "eslint": "^5.16.0",
-    "caviar": "^6.0.0"
+    "caviar": "^6.0.1"
   },
   "dependencies": {
     "core-util-is": "^1.0.2",
@@ -52,6 +52,6 @@
     "supertest": "^4.0.2"
   },
   "peerDependencies": {
-    "caviar": "^6.0.0"
+    "caviar": "^6.0.1"
   }
 }
